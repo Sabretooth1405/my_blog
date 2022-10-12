@@ -1,6 +1,9 @@
-/rent_site/rent_site/rent_site/settings.py
+
 /venv
 rent_site/blog/__pycache__/
 rent_site/blog/migrations/__pycache__
 rent_site/rent_site/__pycache__/settings.cpython-310.pyc
 rent_site/rent_site/__pycache__/urls.cpython-310.pyc
+rent_site/rent_site/settings.py
+rent_site/rent_site/__pycache__/__init__.cpython-310.pyc
+rent_site/rent_site/__pycache__/wsgi.cpython-310.pyc
