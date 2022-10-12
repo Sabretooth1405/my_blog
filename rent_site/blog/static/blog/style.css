@@ -1,0 +1,81 @@
+
+body {
+    background-color: rgb(241, 242, 242);
+    height: 100vh;
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-weight: 900;
+    color: white;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+#title {
+    background-color: #D9534F;
+    color: aliceblue;
+}
+
+a {
+    color: aliceblue;
+}
+
+.navbar-brand {
+    font-size: 36px;
+}
+
+#login {
+    background-color: #FFEEAD;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #FFAD60;
+    padding: 3%;
+    border: 5px solid #96CEB4;
+    border-radius: 10%;
+}
+
+h2 {
+    text-align: center;
+}
+
+footer {
+    background-color: #96CEB4;
+}
+
+#contact {
+    padding: 0;
+}
+
+#contact1 {
+    padding-top: 0.63%;
+    padding-left: 1.5%;
+}
+
+#posts {
+    width: 45%;
+    margin: 3% auto;
+}
+
+.card {
+    margin: 2% 0;
+}
+
+.card-header {
+    color: white;
+}
+
+.credit {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.credit-cont {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,1 +1,4 @@
-/rent_site/settings.py
+/rent_site/rent_site/settings.py
+/venv
+rent_site/blog/__pycache__/
+rent_site/blog/migrations/__pycache__/
