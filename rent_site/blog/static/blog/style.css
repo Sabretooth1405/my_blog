@@ -1,4 +1,3 @@
-
 body {
     background-color: rgb(241, 242, 242);
     height: 100vh;
@@ -78,4 +77,8 @@ footer {
 .credit-cont {
     display: flex;
     justify-content: space-around;
+}
+
+.form-container {
+   margin: 3% auto;
 }
