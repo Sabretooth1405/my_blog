@@ -24,7 +24,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mr-5">
-
                     {% if user.is_authenticated %}
                     <li class="nav-item active"> <a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     <li class="nav-item active"> <a class="nav-link" href="{% url 'profile' %}">Profile</a> </li>
@@ -33,6 +32,7 @@
                     <li class="nav-item active"> <a class="nav-link" href="{% url 'login' %}">Login</a></li>
                     {% endif %}
 
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'manga-list' %}">Manga Blog</a>
                     </li>
@@ -57,22 +57,27 @@
             </div>
             {% endfor %}
             {% endif %}
-            {%for post in posts%}
             <div class="card">
                 <div class="card-header bg-dark">
-                    Manga Blog
+                    <span class="username">{{post.author.username}}</span>
+                    {% if post.author == user %}
+                    <div class="change">
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{post.content|truncatechars:280}}...</p>
+                    <p class="card-text">{{post.content|linebreaks}}</p>
                     <div class="credit-cont">
-                        <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More</a> <span
-                            class="credit"><small>By
-                                {{post.author.username}} on {{post.date_added|date:"M j,Y"}} </small></span>
+                        <span class="credit"><small>Posted
+                                on {{post.date_added|date:"M j,Y"}} </small></span>
+                        
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            
 
     </section>
 
@@ -104,6 +109,4 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/68ff303a29.js" crossorigin="anonymous"></script>
-</body>
-
 </body>

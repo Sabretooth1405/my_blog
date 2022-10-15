@@ -80,5 +80,45 @@ footer {
 }
 
 .form-container {
-   margin: 3% auto;
+    margin: 3% auto;
 }
+
+.user {
+    width: 40%;
+    margin: 3% auto;
+    background-color: white;
+    border: 2px solid black;
+    padding: 1% 0 2.5% 1.5%;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2%;
+}
+
+.info {
+    display: block;
+}
+
+img {
+    flex-basis: 20%;
+    width: 20%;
+    border-radius: 50%;
+    margin-bottom: 2%;
+}
+
+.change {
+    margin:2%
+}
+
+.username {
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+
+}
+
+/* #change {
+    align-self: flex-end;
+} */
