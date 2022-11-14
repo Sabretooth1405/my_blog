@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import UserRegisterForm
 from django.contrib import messages
@@ -14,7 +14,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Profile
-
+from blog.models import Post
 
 def register(req):
 
@@ -117,3 +117,5 @@ class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == user:
             return True
         return False
+
+

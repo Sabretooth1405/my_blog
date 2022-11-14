@@ -68,7 +68,7 @@
                     <div class="credit-cont">
                         <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More</a> <span
                             class="credit"><small>By
-                            <a href="{% url 'user-posts' post.author.username %}">  {{post.author.username}} </a> on {{post.date_added|date:"M j,Y"}} </small></span>
+                               <a href="{% url 'user-posts' post.author.username %}" class="link-dark"> {{post.author.username}} </a> on {{post.date_added|date:"M j,Y"}} </small></span>
                     </div>
                 </div>
             </div>
@@ -79,24 +79,20 @@
                         {% if page_obj.has_previous %}
                         <li class="page-item"> <a href="?page=1" class="page-link">1</a></li>
                         {% if page_obj.previous_page_number != 1 %}
-                        <li class="page-item"><a class="page-link"
-                                href="?page={{ page_obj.previous_page_number }}">{{page_obj.previous_page_number }}</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{page_obj.previous_page_number }}</a></li>
                         {% endif %}
                         {% endif %}
                         <li class="page-item active"><a class="page-link" href="">{{ page_obj.number }}</a></li>
                         {% if page_obj.has_next %}
                         {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
-                        <li class="page-item"><a class="page-link"
-                                href="?page={{ page_obj.next_page_number }}">{{page_obj.next_page_number }}</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{page_obj.next_page_number }}</a></li>
                         {% endif %}
-                        <li class="page-item"><a class="page-link"
-                                href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages }}(last)</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages }}(last)</a></li>
                         {% endif %}
                     </ul>
                 </nav>
-            
-            </div>
 
+            </div>
     </section>
 
     <footer>
@@ -127,6 +123,4 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/68ff303a29.js" crossorigin="anonymous"></script>
-</body>
-
 </body>

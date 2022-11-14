@@ -16,9 +16,7 @@ h1 {
     color: aliceblue;
 }
 
-a {
-    color: aliceblue;
-}
+
 
 .navbar-brand {
     font-size: 36px;
@@ -122,3 +120,8 @@ img {
 /* #change {
     align-self: flex-end;
 } */
+
+.pagination-list{
+    margin: 0 auto;
+    width: 30%;
+}
