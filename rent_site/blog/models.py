@@ -10,9 +10,13 @@ class Post(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     category=models.CharField(max_length=20,default="manga")
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
+   
     def __str__(self) -> str:
         return self.title
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+
+class View_Counter(models.Model):
+    post=models.ForeignKey(Post,on_delete=models.CASCADE)
+    views=models.IntegerField(default=0)

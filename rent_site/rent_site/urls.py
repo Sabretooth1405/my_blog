@@ -4,6 +4,7 @@ from django.urls import path, include
 from users import views as users_views
 from django.conf import settings
 from django.conf.urls.static import static
+from api import views as api_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("blog/", include("blog.urls")),
@@ -37,6 +38,7 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
     path('', include('blog.urls')),
+    path('api/views/<int:pk>',api_views.view_counterDetail,name='api-views'),
    
 
 ]

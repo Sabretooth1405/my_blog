@@ -73,11 +73,12 @@
                     <div class="credit-cont">
                         <span class="credit"><small>Posted
                                 on {{post.date_added|date:"M j,Y"}} </small></span>
-                        
+                        <span class="credit" id="counter"><small>Views: {{views}} </small></span>
+
                     </div>
                 </div>
             </div>
-            
+
 
     </section>
 
@@ -109,4 +110,22 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/68ff303a29.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        countDisplay = document.getElementById('counter');
+        pk = "{{post.pk}}"
+         async function callViewApi() {
+            const viewResponse = await fetch(`http://127.0.0.1:8000/api/views/${pk}`)
+            const viewResponseJson = await viewResponse.json()
+            return viewResponseJson.views
+        }
+        let views= callViewApi()
+        setInterval(async ()=>{
+            let views_copy=views
+            views=  await callViewApi()
+            if(views!==views_copy){
+                console.log('inc')
+            }
+            countDisplay.innerHTML=`<small>Views:${views}</small>`
+        },5000);
+    </script>
 </body>
